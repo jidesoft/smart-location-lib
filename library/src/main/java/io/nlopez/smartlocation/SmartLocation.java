@@ -152,7 +152,7 @@ public class SmartLocation {
 
     public static class LocationControl {
 
-        private static final Map<Context, LocationProvider> MAPPING = new WeakHashMap<>();
+//        private static final Map<Context, LocationProvider> MAPPING = new WeakHashMap<>();
 
         private final SmartLocation smartLocation;
         private LocationParams params;
@@ -164,10 +164,10 @@ public class SmartLocation {
             params = LocationParams.BEST_EFFORT;
             oneFix = false;
 
-            if (!MAPPING.containsKey(smartLocation.context)) {
-                MAPPING.put(smartLocation.context, locationProvider);
-            }
-            provider = MAPPING.get(smartLocation.context);
+//            if (!MAPPING.containsKey(smartLocation.context)) {
+//                MAPPING.put(smartLocation.context, locationProvider);
+//            }
+            provider = locationProvider;
 
             if (smartLocation.preInitialize) {
                 provider.init(smartLocation.context, smartLocation.logger);
