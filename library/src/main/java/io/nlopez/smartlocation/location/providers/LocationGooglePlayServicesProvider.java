@@ -252,14 +252,14 @@ public class LocationGooglePlayServicesProvider implements ServiceLocationProvid
 
     @Override
     public void onLocationChanged(Location location) {
-        logger.d("onLocationChanged", location);
+//        logger.d("onLocationChanged", location);
 
         if (listener != null) {
             listener.onLocationUpdated(location);
         }
 
         if (locationStore != null) {
-            logger.d("Stored in SharedPreferences");
+//            logger.d("Stored in SharedPreferences");
             locationStore.put(GMS_ID, location);
         }
     }
